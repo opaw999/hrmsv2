@@ -226,74 +226,59 @@
             $("button.addManual").hide();
             alertRequired()
         } else {
-            loader_dots('checkBl')
-            loader_dots('checkBlt')
+
             $("button.addManual").show();
             $("div.checkBl").show();
             $("div.checkBlt").show();
-            $.ajax({
-                url: "<?= site_url('promo/checkBl') ?>",
-                type: 'POST',
-                success: function(data) {
-                    $("div.checkBl").html(data);
-                    $("div.checkBl").addClass("border-start");
+            $("div.checkBl").addClass("border-start");
+            $("div.checkBlt").addClass("border-start");
 
-                    $("#checkBl_table").DataTable({
-                        "destroy": true,
-                        "processing": true,
-                        "serverSide": true,
-                        "ajax": {
-                            url: "<?php echo site_url('promo/addCheckBl'); ?>",
-                            type: "POST",
-                            data: {
-                                fn,
-                                ln,
-                                mn,
-                            },
-                        },
-                        "order": [],
-                        "columnDefs": [{
-                            "targets": [1, 2],
-                            "className": "text-center",
-                            "orderable": false,
-                        }],
-                        lengthChange: false,
-                        searching: false
-                    });
-                }
+            $("#checkBl_table").DataTable({
+                "destroy": true,
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    url: "<?php echo site_url('promo/addCheckBl'); ?>",
+                    type: "POST",
+                    data: {
+                        fn,
+                        ln,
+                        mn,
+                    },
+                },
+                "order": [],
+                "columnDefs": [{
+                    "targets": [1, 2],
+                    "className": "text-center",
+                    "orderable": false,
+                }],
+                lengthChange: false,
+                searching: false
             });
 
-            $.ajax({
-                url: "<?= site_url('promo/checkBlt') ?>",
-                type: 'POST',
-                success: function(data) {
-                    $("div.checkBlt").html(data);
-                    $("div.checkBlt").addClass("border-start");
-                    $("#checkBlt_table").DataTable({
-                        "destroy": true,
-                        "processing": true,
-                        "serverSide": true,
-                        "ajax": {
-                            url: "<?php echo site_url('promo/addCheckBlt'); ?>",
-                            type: "POST",
-                            data: {
-                                fn,
-                                ln,
-                                mn,
-                            },
-                        },
-                        "order": [],
-                        "columnDefs": [{
-                            "targets": [1],
-                            "className": "text-center",
-                            "orderable": false,
-                        }],
-                        lengthChange: false,
-                        searching: false
-                    });
-
-                }
+            $("#checkBlt_table").DataTable({
+                "destroy": true,
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    url: "<?php echo site_url('promo/addCheckBlt'); ?>",
+                    type: "POST",
+                    data: {
+                        fn,
+                        ln,
+                        mn,
+                    },
+                },
+                "order": [],
+                "columnDefs": [{
+                    "targets": [1],
+                    "className": "text-center",
+                    "orderable": false,
+                }],
+                lengthChange: false,
+                searching: false
             });
+
         }
     }
 

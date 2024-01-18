@@ -46,8 +46,33 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-5 checkBl"> </div>
-                    <div class="col-md-5 checkBlt"> </div>
+                    <div class="col-md-5 checkBl" style="display: none;">
+                        <div class="text-center">
+                            <p class="mb-0"><strong>Records Match on applicant and employee3 tables.</strong></p>
+                        </div>
+                        <table class="table table-hover" id="checkBl_table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Current Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="col-md-5 checkBlt" style="display: none;">
+                        <div class="text-center">
+                            <p class="mb-0"><strong>Records Match on blacklist table.</strong></p>
+                        </div>
+                        <table class="table table-hover" id="checkBlt_table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Current Status</th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
                 </div>
             </div>
         </div>
