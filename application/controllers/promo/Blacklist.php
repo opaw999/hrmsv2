@@ -79,37 +79,6 @@ class Blacklist extends CI_Controller
         }
     }
 
-    public function checkBl()
-    {
-        echo    '<div class="text-center">
-                    <p class="mb-0"><strong>Records Match on applicant and employee3 tables.</strong></p>
-                </div>
-                <table class="table table-hover" id="checkBl_table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Current Status</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                </table>';
-    }
-
-    public function checkBlt()
-    {
-        echo    '<div class="text-center">
-                    <p class="mb-0"><strong>Records Match on blacklist table.</strong></p>
-                </div>
-                <table class="table table-hover" id="checkBlt_table">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Current Status</th>
-                        </tr>
-                    </thead>
-                </table>';
-    }
-
     public function addCheckBl()
     {
         $input  = $this->input->post(NULL, TRUE);
